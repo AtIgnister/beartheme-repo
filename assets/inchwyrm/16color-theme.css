@@ -1,0 +1,399 @@
+/* 16-color Terminal Theme */
+/* v1 */
+
+:root {
+  --font: monospace;
+  --width: 800px;
+  
+  /* COLORS */
+  /* one way to get colors you like is to go to terminal.sexy and find or make a color palette. Export it to the "termite" format to make copy/pasting the hex codes easy. */
+  
+  --foreground: #c5c8c6;
+  --background: #1d1f21;
+  --background-rgba: rgb(29, 31, 33, 0.8);
+  
+  --black: #282a2e;
+  --bright-black: #373b41;
+  
+  --red: #a54242;
+  --bright-red: #cc6666;
+  
+  --green: #8c9440;
+  --bright-green: #b5bd68;
+  
+  --yellow: #de935f;
+  --bright-yellow: #f0c674;
+  
+  --blue: #5f819d;
+  --bright-blue: #81a2be;
+  
+  --magenta: #85678f;
+  --bright-magenta: #b294bb;
+  
+  --cyan: #5e8d87;
+  --bright-cyan: #8abeb7;
+  
+  --white: #707880;
+  --bright-white: #c5c8c6;
+  
+  /* replace these with your favorite accent color*/
+  --accent: var(--green);
+  --bright-accent: var(--bright-green);
+  
+  /* replace these with your preferred link color */
+  --link: var(--blue);
+  --bright-link: var(--bright-blue);
+}
+
+
+/* BASIC STRUCTURE */
+
+body {
+  font-family: var(--font);
+  
+  background-color: var(--background);
+  color: var(--foreground);
+  
+  width: var(--width);
+  max-width: 100%;
+  margin: auto;
+  border: 2px solid var(--black);
+  background-image: url("");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  font-size: 1.2em;
+  background-color: var(--black);
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 0;
+  padding-top: 1em;
+  line-height: 1.5;
+  background-color: var(--background-rgba);
+  
+}
+
+footer {
+  background-color: var(--accent);
+  color: var(--background);
+  margin: 0;
+  padding: 0 0 0 1em !important;
+}
+
+
+/* BASIC ELEMENTS */
+
+hr {
+  border: 0;
+  border-top: 2px solid var(--bright-black);
+  margin: 1em 2em 2em;
+}
+
+/* paragraphs */
+
+p {
+  margin: 0;
+  padding: 0 2em 1em;
+}
+
+nav p {
+  padding: 0;
+  display: flex;
+}
+
+/* blockquotes & preformatted text */
+
+blockquote, pre {
+  background-color: var(--black);
+  margin: 2em;
+  padding: 1em 0 1px;
+  border-left: 2px solid var(--accent);
+}
+
+blockquote p {
+  padding: 0;
+  margin: 0 1em 1em;
+}
+
+pre {
+  padding: 1em;
+  color: var(--white);
+  overflow-x: scroll;
+}
+
+/* bold & italic */
+
+b, strong {
+  color: var(--accent);
+}
+
+i, em {
+  color: var(--bright-accent);
+}
+
+/* images */
+img {
+  margin: 0;
+  padding: 1em;
+  max-width: 100%;
+  display: block;
+}
+
+/* time */
+
+time {
+  color: var(--white);
+}
+
+/* tables */
+
+table {
+  max-width: 100%;
+  margin: 1em 1em 2em;
+  text-align: left;
+  background-color: var(--black);
+  border-spacing: 2px;
+}
+
+thead {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+tr:nth-child(2n) {
+  background-color: var(--bright-black);
+}
+
+th, td {
+  padding: 0 1em;
+  margin: 0;
+}
+
+/* lists */
+
+ol, ul {
+  margin: 1em 3em 2em;
+  padding: 0 2em;
+}
+
+li {
+  padding-left: .5em;
+  margin: 0;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+/* links */
+
+a {
+  color: var(--bright-link);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--background);
+  background-color: var(--bright-link);
+  text-decoration: none;
+}
+
+nav a {
+  color: var(--bright-accent);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0;
+  padding: 2px .8em;
+}
+
+nav a:visited {
+  color: var(--bright-accent);
+}
+
+nav a:hover {
+  background-color: var(--bright-accent);
+  color: var(--background);
+}
+
+footer a {
+  color: var(--background)!important;
+}
+
+footer a:hover {
+  background-color: var(--bright-accent);
+}
+
+/* headings */
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 1em;
+  padding: 0 1em;
+}
+
+h1 { 
+  color: var(--bright-red);
+}
+h1::before { 
+  content: "# ";
+}
+
+h2 {
+  color: var(--bright-yellow);
+}
+h2::before { 
+  content: "## ";
+}
+
+h3 {
+  color: var(--bright-green);
+}
+h3::before { 
+  content: "### ";
+}
+
+h4 {
+  color: var(--bright-cyan);
+}
+h4::before { 
+  content: "#### ";
+}
+
+h5 {
+  color: var(--bright-blue);
+}
+h5::before { 
+  content: "##### ";
+}
+
+h6 {
+  color: var(--bright-magenta);
+}
+h6::before { 
+  content: "###### ";
+}
+
+
+/* BEAR CLASSES */
+
+.title h1 {
+  color: var(--background);
+  background-color: var(--accent);
+  font-size: 2em;
+  margin: 0;
+  padding: 0 0 0 0.5em;
+}
+
+.title {
+  text-decoration: none;
+}
+
+.title h1:hover {
+  background-color: var(--bright-accent);
+}
+
+.title h1::before {
+  content: "";
+}
+
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em 1em .5em;
+  padding: 0;
+  max-width: 100%;
+}
+
+.blog-posts li::marker {
+  content: "";
+}
+
+.blog-posts li {
+  display: flex;
+}
+
+.blog-posts li a {
+  flex-grow: 1;
+  padding-left: .5em;
+}
+.blog-posts li span {
+  padding-right: .5em;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 1em 0 0;
+  padding: 0;
+}
+
+.tags::before {
+  background-color: var(--accent);
+  color: var(--background);
+  content: "Tags";
+  width: 100%;
+  padding: 0 1em;
+  font-weight: bold;
+}
+
+.tags a {
+  color: var(--bright-accent);
+  background-color: var(--black);
+  font-weight: normal;
+  padding: 0 1em;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.tags a:visited {
+  color: var(--bright-accent);
+}
+
+.tags a:hover {
+  color: var(--background);
+  background-color: var(--bright-accent);
+}
+
+.upvote-button {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: 0;
+  color: var(--accent);
+}
+
+.upvote-button:hover {
+  background-color: var(--bright-black);
+}
+
+svg {
+  color: var(--bright-accent);
+}
+
+
+/* CUSTOM CLASSES */
+
+/* syntax highlighting */
+
+.nc { color: var(--bright-red); }
+.nv { color: var(--bright-yellow); }
+.mi { color: var(--bright-white); }
