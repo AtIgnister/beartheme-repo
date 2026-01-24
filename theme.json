@@ -26,5 +26,12 @@
         "website": "https://robertbirming.com/bear-halloween-theme/",
         "style_url": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/robert-birming/halloween.css",
         "thumbnail": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/robert-birming/halloween.webp"
+    },
+    {
+        "name": "Bubble Tea",
+        "author": "Kami",
+        "website": "https://kami.bearblog.dev/bubble-tea-bear-theme/",
+        "style_url": "https://raw.githubusercontent.com/AtIgnister/bubble-tea/refs/heads/main/styles.css",
+        "thumbnail": "https://raw.githubusercontent.com/AtIgnister/bubble-tea/refs/heads/main/darkmode.png"
     }
 ]
