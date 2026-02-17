@@ -1,0 +1,645 @@
+/* Colors */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #faf4ed;
+        --txt: #2e2834;
+        --link: #6b4fa3;
+
+        --headwave: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/headwave-light.svg");
+        --profile: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/keroppi-light.svg");
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #191724;
+        --txt: #e4e1e8;
+        --link: #baa2e4;
+
+        --headwave: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/headwave-dark.svg");
+        --profile: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/keroppi-dark.svg");
+    }
+}
+
+/* Fonts */
+@font-face {
+    font-family: "New York";
+    src: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/newyork.woff2");
+}
+@font-face {
+    font-family: "New York";
+    font-style: italic;
+    src: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/newyorkitalic.woff2");
+}
+@font-face {
+    font-family: "Menlo";
+    src: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/menlo.woff2");
+}
+
+/* Global Variables */
+:root {
+    --width: 750px;
+    --max-width: 93%;
+    --factor: 1.1;
+    --very-small: calc(0.75rem * var(--factor));
+    --small: calc(0.9rem * var(--factor));
+    --regular: calc(1rem * var(--factor));
+    --large: calc(1.3rem * var(--factor));
+    --very-large: calc(1.5rem * var(--factor));
+    --very-very-large: calc(1.7rem * var(--factor));
+    --font-serif: ui-serif, "New York", serif;
+    --font-mono: ui-monospace, "Menlo", monospace;
+    --radius: 0.5rem;
+    --magnification: 1.1;
+    --minification: 0.9;
+    --txt-deco: none;
+    --txt-transform: lowercase;
+    --duration: 0.6s;
+
+    --accent: color-mix(in srgb, var(--visited) 70%, var(--heading));
+    --visited: color-mix(in srgb, var(--link) 40%, var(--heading));
+    --block: color-mix(in srgb, var(--accent) 20%, var(--bg));
+    --heading: color-mix(in srgb, var(--link) 70%, var(--bg));
+    --muted: color-mix(in srgb, var(--txt) 80%, var(--bg));
+}
+
+/* Global resets */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Basic styles */
+body {
+    margin: 10px auto;
+    padding: 5px;
+    width: var(--width);
+    max-width: var(--max-width);
+    font-size: var(--regular);
+    line-height: 1.5;
+    text-align: left;
+    font-family: var(--font-serif);
+    color: var(--txt);
+    background-color: var(--bg);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-image: var(--headwave);
+    background-position: top right;
+    background-size: 35%;
+    background-blend-mode: normal;
+    background-repeat: no-repeat;
+    text-rendering: optimizeLegibility;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading);
+    text-transform: var(--txt-transform);
+}
+
+h1 {
+    font-size: var(--very-large);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: var(--large);
+    font-weight: 800;
+}
+
+h3 {
+    font-size: var(--large);
+    font-weight: 800;
+}
+
+h4 {
+    font-size: var(--regular);
+    font-weight: 800;
+}
+
+strong,
+b {
+    color: var(--txt);
+}
+
+/* Links */
+a {
+    color: var(--link);
+    text-decoration: var(--txt-deco);
+    transition: transform var(--duration) ease;
+}
+
+a:hover {
+    color: var(--visited);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.15em;
+}
+
+/* Form elements */
+input,
+button,
+textarea,
+select {
+    margin: 2px 0 3px 0;
+    padding: 4px 8px 4px 6px;
+    font: inherit;
+    box-sizing: border-box;
+    color: var(--link);
+    background: var(--block);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+}
+
+button {
+    cursor: pointer;
+    transition: transform var(--duration) ease;
+}
+
+button:hover a {
+    text-decoration: var(--txt-deco);
+}
+
+button:hover {
+    transform: scale(var(--magnification));
+}
+
+button:active {
+    transform: scale(var(--minification));
+}
+
+legend {
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    margin: 0 0 10px;
+    padding: 5px 10px;
+    color: var(--txt);
+    background: var(--block);
+}
+
+input {
+    width: 55%;
+}
+
+textarea {
+    width: 95%;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="email"] {
+    margin: 0 0 20px;
+    padding: 7px;
+    font-weight: bold;
+    color: var(--bg);
+    background: var(--link);
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-transform: var(--txt-transform);
+}
+
+::placeholder {
+    color: var(--muted);
+}
+
+/* Misc elements */
+time {
+    font-style: normal;
+    font-size: var(--small);
+    color: var(--muted);
+}
+
+hr {
+    border: 1px dashed var(--accent);
+}
+
+blockquote {
+    margin: 5px 0;
+    padding: 5px 25px;
+    background: var(--block);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--accent);
+}
+
+/* Images */
+img,
+video {
+    display: block;
+    margin: 0 auto 25px auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: var(--radius);
+    transition: transform var(--duration) ease;
+}
+
+img:hover {
+    transform: scale(var(--magnification));
+}
+
+img:active {
+    transform: scale(var(--minification));
+}
+
+/* Image Lightbox */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform var(--duration) ease;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightbox img:hover {
+    transform: none;
+}
+
+#lightbox img:active {
+    transform: scale(var(--minification));
+}
+
+#lightbox:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Image Caption */
+figcaption,
+main p:has(> img) > em {
+    font-style: normal;
+    display: table;
+    width: auto;
+    margin: 1em auto 2em;
+    padding: 5px 12px;
+    font-size: var(--small);
+    color: var(--txt);
+    opacity: 0.8;
+    text-align: center;
+    background: var(--block);
+    border-radius: var(--radius);
+}
+
+/* Tags */
+.tags {
+    font-size: var(--small);
+    text-transform: var(--txt-transform);
+}
+
+.tags a {
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+    padding: 4px 10px;
+    text-decoration: var(--txt-deco);
+    background: var(--block);
+    border-radius: var(--radius);
+    transition: transform var(--duration) ease;
+}
+
+.tags a:hover {
+    text-decoration: var(--txt-deco);
+    transform: scale(var(--magnification));
+}
+
+.tags a:active {
+    transform: scale(var(--minification));
+}
+
+/* Navigation */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--accent);
+}
+
+header h1 {
+    font-size: var(--large);
+    margin-top: 0;
+}
+
+header h1::before {
+    display: inline-block;
+    content: "";
+    background: var(--profile) no-repeat;
+    height: 3rem;
+    width: 3rem;
+    background-size: cover;
+    border-radius: var(--radius);
+    vertical-align: bottom;
+}
+
+header a:hover {
+    text-decoration: var(--txt-deco);
+}
+
+nav p {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: var(--small);
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    color: var(--link);
+    background: var(--block);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    transition: transform var(--duration) ease;
+}
+
+nav a:hover {
+    background: var(--bg);
+    color: var(--visited);
+    text-decoration: var(--txt-deco);
+    transform: scale(var(--magnification));
+}
+
+nav a:active {
+    transform: scale(var(--minification));
+}
+
+@media (max-width: 45rem) {
+    header {
+        border-bottom: none;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 20px 0 !important;
+    font-family: var(--font-serif);
+    font-size: var(--small);
+    text-align: center;
+}
+
+footer a {
+    text-decoration: var(--txt-deco);
+}
+
+footer strong {
+    font-size: var(--regular);
+    font-style: bold;
+}
+
+footer span:has(a[href="https://bearblog.dev"]) {
+    display: none;
+}
+
+/* Misc styles */
+.inline {
+    width: auto !important;
+}
+
+.code,
+.highlight {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding: 1px 15px;
+    overflow-x: auto;
+    background-color: #e2dae1;
+    border-radius: var(--radius);
+}
+
+pre {
+    font-family: var(--font-mono);
+}
+.p {
+    color: green;
+}
+.n {
+    color: black;
+}
+
+mark {
+    background: var(--block);
+    color: var(--txt);
+    border-radius: var(--radius);
+    padding: 0.2rem;
+}
+
+/* Upvote button */
+.upvote-button svg {
+    display: none;
+}
+
+.upvote-button {
+    font-family: var(--font-serif);
+}
+
+.upvote-button::before {
+    content: "🩷";
+    font-size: var(--large);
+    color: var(--txt);
+}
+
+.upvote-button[disabled] {
+    cursor: default;
+}
+
+.upvote-button[disabled]::before {
+    content: "💘";
+    font-size: var(--large);
+    color: var(--link);
+}
+
+.upvote-button.upvoted {
+    color: var(--link) !important;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    color: var(--bg);
+    text-align: left;
+    background-color: var(--link);
+}
+
+thead th,
+tfoot th,
+tfoot td {
+    padding: 3px 0 3px 7px;
+}
+
+td {
+    padding: 7px 0 7px 8px;
+    font-size: var(--regular);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--accent);
+}
+
+tbody tr:nth-child(odd) td {
+    color: var(--bg);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--block);
+}
+
+tbody tr:nth-child(even) td {
+    color: var(--txt);
+}
+
+/* Print styles */
+@media print {
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    blockquote,
+    code {
+        margin: 0;
+        padding: 0 1.5em;
+        background: #fff;
+        border: none;
+    }
+
+    nav,
+    footer,
+    .tags,
+    .upvote-button {
+        display: none !important;
+    }
+}
+
+/* Addons */
+/* Pagination */
+.pagination {
+    text-align: center;
+}
+#prevPage {
+    float: left;
+}
+#nextPage {
+    float: right;
+}
+
+/* Status */
+/* Box containing post content */
+ul.blog-posts > li {
+    background-color: var(--block);
+    border-radius: var(--radius);
+    margin-top: 1.25em;
+    padding: 1.25em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* Remove extra space above and below content */
+ul.blog-posts > li div p:first-child {
+    margin-top: 0;
+}
+
+ul.blog-posts > li div p:last-child {
+    margin-bottom: 0.5em;
+}
+
+/* Remove extra space to the left of content */
+ul.blog-posts {
+    padding: unset;
+}
+
+/* Hide title, but not link */
+ul.blog-posts > li > a {
+    visibility: hidden;
+    font-size: 0px;
+    text-decoration: var(--txt-deco);
+}
+
+/* Content that will be visibly linked */
+ul.blog-posts > li > a::after {
+    visibility: visible;
+    content: "→"; /* Select an emoji, symbol, or other short text */
+    font-size: 1rem;
+}
+
+/* Post body */
+ul.blog-posts > li > div {
+    flex-basis: 100%;
+}
+
+ul.blog-posts li > div > blockquote {
+    background: var(--bg);
+    padding: 0.7rem 1rem;
+}
+
+.post main h1 {
+    display: none;
+}
+
+.post time {
+    text-align: center;
+    padding: 0.3rem;
+    border: 1px solid var(--accent);
+    display: block;
+    background-color: var(--block);
+    border-radius: var(--radius);
+}
+
+/* Search */
+#searchInput {
+    width: 85%;
+    margin: auto;
+    padding: 0.45em;
+}

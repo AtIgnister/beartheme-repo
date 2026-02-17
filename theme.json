@@ -33,5 +33,19 @@
         "website": "https://kami.bearblog.dev/bubble-tea-bear-theme/",
         "style_url": "https://raw.githubusercontent.com/AtIgnister/bubble-tea/refs/heads/main/styles.css",
         "thumbnail": "https://raw.githubusercontent.com/AtIgnister/bubble-tea/refs/heads/main/darkmode.png"
+    },
+    {
+        "name": "Keroppi Theme",
+        "author": "Suliman",
+        "website": "https://blog.sulimans.space/bearblog-creation-festival/",
+        "style_url": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/suliman/keroppi.css",
+        "thumbnail": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/suliman/keroppi.png"
+    },
+    {
+        "name": "Keroppi's Status",
+        "author": "Suliman",
+        "website": "https://blog.sulimans.space/bearblog-creation-festival/",
+        "style_url": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/suliman/keroppi-status.css",
+        "thumbnail": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/suliman/keroppi-status.png"
     }
 ]
