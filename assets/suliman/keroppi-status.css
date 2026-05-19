@@ -1,41 +1,3 @@
-/* Colors */
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg: #faf4ed;
-        --txt: #2e2834;
-        --link: #6b4fa3;
-
-        --headwave: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/headwave-light.svg");
-        --profile: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/keroppi-light.svg");
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #191724;
-        --txt: #e4e1e8;
-        --link: #baa2e4;
-
-        --headwave: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/headwave-dark.svg");
-        --profile: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/keroppi-dark.svg");
-    }
-}
-
-/* Fonts */
-@font-face {
-    font-family: "New York";
-    src: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/newyork.woff2");
-}
-@font-face {
-    font-family: "New York";
-    font-style: italic;
-    src: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/newyorkitalic.woff2");
-}
-@font-face {
-    font-family: "Menlo";
-    src: url("https://bear-images.sfo2.cdn.digitaloceanspaces.com/suliman/menlo.woff2");
-}
-
 /* Global Variables */
 :root {
     --width: 750px;
@@ -44,11 +6,11 @@
     --very-small: calc(0.75rem * var(--factor));
     --small: calc(0.9rem * var(--factor));
     --regular: calc(1rem * var(--factor));
-    --large: calc(1.3rem * var(--factor));
-    --very-large: calc(1.5rem * var(--factor));
-    --very-very-large: calc(1.7rem * var(--factor));
-    --font-serif: ui-serif, "New York", serif;
-    --font-mono: ui-monospace, "Menlo", monospace;
+    --large: calc(1.4rem * var(--factor));
+    --very-large: calc(1.7rem * var(--factor));
+    --very-very-large: calc(2rem * var(--factor));
+    --font-serif: system-ui, sans-serif;
+    --font-mono: ui-monospace, monospace;
     --radius: 0.5rem;
     --magnification: 1.1;
     --minification: 0.9;
@@ -60,7 +22,7 @@
     --visited: color-mix(in srgb, var(--link) 40%, var(--heading));
     --block: color-mix(in srgb, var(--accent) 20%, var(--bg));
     --heading: color-mix(in srgb, var(--link) 70%, var(--bg));
-    --muted: color-mix(in srgb, var(--txt) 80%, var(--bg));
+    --muted: color-mix(in srgb, var(--link) 10%, var(--bg));
 }
 
 /* Global resets */
@@ -165,14 +127,21 @@ select {
     font: inherit;
     box-sizing: border-box;
     color: var(--link);
-    background: var(--block);
+    background: var(--muted);
     border: 1px solid var(--accent);
     border-radius: var(--radius);
+}
+input:active,
+textarea:active,
+select:active {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
 }
 
 button {
     cursor: pointer;
     transition: transform var(--duration) ease;
+    background-color: var(--muted);
 }
 
 button:hover a {
@@ -180,7 +149,9 @@ button:hover a {
 }
 
 button:hover {
+    transition: transform var(--duration) ease;
     transform: scale(var(--magnification));
+    background-color: var(--block);
 }
 
 button:active {
@@ -202,11 +173,11 @@ textarea {
     margin: 0 0 10px;
     padding: 5px 10px;
     color: var(--txt);
-    background: var(--block);
+    background: var(--muted);
 }
 
 input {
-    width: 55%;
+    width: 70%;
 }
 
 textarea {
@@ -220,7 +191,7 @@ input[type="email"] {
     margin: 0 0 20px;
     padding: 7px;
     font-weight: bold;
-    color: var(--bg);
+    color: var(--muted);
     background: var(--link);
     border-radius: var(--radius);
     cursor: pointer;
@@ -228,14 +199,16 @@ input[type="email"] {
 }
 
 ::placeholder {
-    color: var(--muted);
+    color: var(--txt);
+    opacity: 0.8;
 }
 
 /* Misc elements */
 time {
     font-style: normal;
     font-size: var(--small);
-    color: var(--muted);
+    color: var(--txt);
+    opacity: 0.8;
 }
 
 hr {
@@ -359,17 +332,6 @@ header h1 {
     margin-top: 0;
 }
 
-header h1::before {
-    display: inline-block;
-    content: "";
-    background: var(--profile) no-repeat;
-    height: 3rem;
-    width: 3rem;
-    background-size: cover;
-    border-radius: var(--radius);
-    vertical-align: bottom;
-}
-
 header a:hover {
     text-decoration: var(--txt-deco);
 }
@@ -426,10 +388,6 @@ footer strong {
     font-style: bold;
 }
 
-footer span:has(a[href="https://bearblog.dev"]) {
-    display: none;
-}
-
 /* Misc styles */
 .inline {
     width: auto !important;
@@ -459,18 +417,16 @@ mark {
     background: var(--block);
     color: var(--txt);
     border-radius: var(--radius);
-    padding: 0.2rem;
+    padding: 0.1rem 0.2rem;
 }
 
 /* Upvote button */
 .upvote-button svg {
     display: none;
 }
-
 .upvote-button {
     font-family: var(--font-serif);
 }
-
 .upvote-button::before {
     content: "🩷";
     font-size: var(--large);
@@ -480,7 +436,6 @@ mark {
 .upvote-button[disabled] {
     cursor: default;
 }
-
 .upvote-button[disabled]::before {
     content: "💘";
     font-size: var(--large);
@@ -489,6 +444,10 @@ mark {
 
 .upvote-button.upvoted {
     color: var(--link) !important;
+}
+
+.upvote-count {
+    display: none;
 }
 
 /* Tables */
@@ -571,6 +530,10 @@ tbody tr:nth-child(even) td {
 #nextPage {
     float: right;
 }
+#pageInfo {
+    color: var(--txt);
+    opacity: 0.8;
+}
 
 /* Status */
 /* Box containing post content */
@@ -642,4 +605,9 @@ ul.blog-posts li > div > blockquote {
     width: 85%;
     margin: auto;
     padding: 0.45em;
+}
+
+/* Tweaks */
+.home main > p:first-child {
+    text-align: center;
 }
