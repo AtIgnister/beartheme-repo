@@ -47,5 +47,19 @@
         "website": "https://blog.sulimans.space/bearblog-creation-festival/",
         "style_url": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/suliman/keroppi-status.css",
         "thumbnail": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/suliman/keroppi-status.png"
+    },
+    {
+        "name": "Atomic Relix",
+        "author": "Future Perfect",
+        "website": "https://atomicrelics.bearblog.dev/",
+        "style_url": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/futureperfect/atomic-relix.css",
+        "thumbnail": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/suliman/atomic-relix.webp"
+    },
+    {
+        "name": "Wackadoo",
+        "author": "Future Perfect",
+        "website": "https://wackadoo-theme.bearblog.dev/",
+        "style_url": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/futureperfect/wackadoo.css",
+        "thumbnail": "https://raw.githubusercontent.com/AtIgnister/beartheme-repo/refs/heads/main/assets/suliman/wackadoo.webp"
     }
 ]
